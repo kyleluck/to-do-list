@@ -34,7 +34,6 @@ def processtasks():
                 continue
             task = int(task)
             db.update('tasks', {'id': task, 'complete': True})
-            #print 'task in loop is: %d' % task
 
     # if we're deleting tasks
     if 'deletetasks' in request.form:

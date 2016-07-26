@@ -7,12 +7,12 @@
       <div class="form-group">
         <input type="text" name="taskname" class="form-control">
       </div>
-      <button type="submit" class="btn btn-default">Add Task</button>
+      <button type="submit" class="btn btn-success">Add Task</button>
     </form>
 
     <hr>
 
-    <span class="badge">{{ tasksnotcomplete[0].numtasks }}</span>
+    <h1><span class="label label-primary">{{ tasksnotcomplete[0].numtasks }}</span></h1>
     <form method="POST" action="/processtasks" class="processtasks">
       {% for task in tasks %}
         <div class="checkbox">
@@ -22,9 +22,9 @@
           </label>
         </div>
       {% endfor %}
-      <button type="submit" class="btn btn-default" name="markcomplete">Mark Complete</button>
-      <button type="submit" class="btn btn-default" name="marknotcomplete">Mark NOT Complete</button>
-      <button type="submit" class="btn btn-default" name="deletetasks">Delete Tasks</button>
+      <button type="submit" class="btn btn-success" name="markcomplete">Mark Complete</button>
+      <button type="submit" class="btn btn-info" name="marknotcomplete">Mark NOT Complete</button>
+      <button type="submit" class="btn btn-danger" name="deletetasks">Delete Tasks</button>
     </form>
 
   </div>
