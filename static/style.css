@@ -4,3 +4,7 @@ ul {
 .complete {
   text-decoration: line-through;
 }
+.userinfo {
+  float: right;
+  margin-bottom: 10px;
+}

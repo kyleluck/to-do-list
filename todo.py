@@ -51,6 +51,13 @@ def process_login():
     else:
         return redirect('/login')
 
+# process logout
+@app.route('/logout', methods=['GET'])
+def logout():
+    del session['user']
+    del session['name']
+    return redirect('/login')
+    
 # add task
 @app.route('/addtask', methods=['POST'])
 def addtask():
