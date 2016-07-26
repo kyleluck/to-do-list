@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="row">
+  <div class="col col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+
+    <form method="POST" action="/addtask">
+      <div class="form-group">
+        <input type="text" name="taskname" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-default">Add Task</button>
+    </form>
+
+    <hr>
+
+    <span class="badge">{{ tasksnotcomplete[0].numtasks }}</span>
+    <form method="POST" action="/processtasks" class="processtasks">
+      {% for task in tasks %}
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="{{ task.id }}">
+            <span {% if task.complete %} class="complete" {% endif %}>{{ task.name }}</span>
+          </label>
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-default" name="markcomplete">Mark Complete</button>
+      <button type="submit" class="btn btn-default" name="marknotcomplete">Mark NOT Complete</button>
+      <button type="submit" class="btn btn-default" name="deletetasks">Delete Tasks</button>
+    </form>
+
+  </div>
+</div>
+{% endblock %}
